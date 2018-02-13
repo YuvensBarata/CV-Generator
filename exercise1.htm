@@ -1,0 +1,286 @@
+<!DOCTYPE>
+
+<html>
+    <head>
+        <title>Biodata</title>
+    </head>
+
+    <body>
+            <fieldset>
+                <legend>Personal Data</legend>
+
+                <p>Nama : <input type = "text" id = "nama"></p>
+                <p>Tempat/Tanggal Lahir : <input type = "text" id = "tempat"> / <input type = "date" id = "tanggal"></p>
+                <p>Gender : <input type = "radio" id = "pria" name = "gender" value = "Pria" checked>Pria <input type = "radio" id = "wanita" name = "gender" value = "Wanita"> Wanita</p>
+                <p>Telepon : <input type = "number" id = "telepon"></p>
+                <p>Email : <input type = "email" id = "surel"></p>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Riwayat Pendidikan</legend>
+
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Nama Institusi</th>
+                        <th>Tahun kelulusan</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th>SD</th>
+                        <th><input type = "text" id = "namaSD"></th>
+                        <th><input type = "number" id = "tahunSD"></th>
+                        <th><input type = "checkbox" id = "cekSD">Check jika tidak ada</th>
+                    </tr>
+                    <tr>
+                        <th>SMP</th>
+                        <th><input type = "text" id = "namaSMP"></th>
+                        <th><input type = "number" id = "tahunSMP"></th>
+                        <th><input type = "checkbox" id = "cekSMP">Check jika tidak ada</th>
+                    </tr>
+                    <tr>
+                        <th>SMA/SMK</th>
+                        <th><input type = "text" id = "namaSMA"></th>
+                        <th><input type = "number" id = "tahunSMA"></th>
+                        <th><input type = "checkbox" id = "cekSMA">Check jika tidak ada</th>
+                    </tr>
+                    <tr>
+                        <th>S1</th>
+                        <th><input type = "text" id = "namaS1"></th>
+                        <th><input type = "number" id = "tahunS1"></th>
+                        <th><input type = "checkbox" id = "cekS1">Check jika tidak ada</th>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend>Riwayat Pekerjaan</legend>
+
+                <table>
+                    <tr>
+                        <th>Nama Perusahaan</th>
+                        <th>Lama Bekerja</th>
+                        <th>Posisi</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th><input type = "text" id = "namakantor1"></th>
+                        <th><input type = "text" id = "durasi1"></th>
+                        <th><input type = "text" id = "posisi1"></th>
+                        <th><input type = "checkbox" id = "cekkerja1">Check jika tidak ada</th>
+                    </tr>
+                    <tr>
+                        <th><input type = "text" id = "namakantor2"></th>
+                        <th><input type = "text" id = "durasi2"></th>
+                        <th><input type = "text" id = "posisi2"></th>
+                        <th><input type = "checkbox" id = "cekkerja2">Check jika tidak ada</th>
+                    </tr>
+                    <tr>
+                        <th><input type = "text" id = "namakantor3"></th>
+                        <th><input type = "text" id = "durasi3"></th>
+                        <th><input type = "text" id = "posisi3"></th>
+                        <th><input type = "checkbox" id = "cekkerja3">Check jika tidak ada</th>
+                    </tr>
+                </table>
+            </fieldset>
+            
+            <br><br>
+            <button onclick = "proses()">Submit</button>
+
+        <p id = "foto"></p>
+        <p id = "biodata"></p>
+
+        <script>
+            function proses()
+            {
+                    var nama = document.getElementById("nama").value;
+                    var tempat = document.getElementById("tempat").value;
+                    var tanggal = document.getElementById("tanggal").value;
+                    var telepon = document.getElementById("telepon").value;
+                    var email = document.getElementById("surel").value;
+
+                    if(document.getElementById("pria").checked == true)
+                    {
+                            var gender = document.getElementById("pria").value;
+                    }
+                    else
+                    {
+                            var gender = document.getElementById("wanita").value;
+                    }
+
+                    if (document.getElementById("cekSD").checked == false)
+                    {
+                        var namaSD = document.getElementById("namaSD").value;
+                        var tahunSD = document.getElementById("tahunSD").value;
+                    }
+                    else
+                    {
+                        var namaSD = " - ";
+                        var tahunSD = " - ";
+                    }
+
+                    if (document.getElementById("cekSMP").checked == false)
+                    {
+                        var namaSMP = document.getElementById("namaSMP").value;
+                        var tahunSMP = document.getElementById("tahunSMP").value;
+                    }
+                    else
+                    {
+                        var namaSMP = " - ";
+                        var tahunSMP = " - ";
+                    }
+
+                    if (document.getElementById("cekSMA").checked == false)
+                    {
+                        var namaSMA = document.getElementById("namaSMA").value;
+                        var tahunSMA = document.getElementById("tahunSMA").value;
+                    }
+                    else
+                    {
+                        var namaSMA = " - ";
+                        var tahunSMA = " - ";
+                    }
+
+                    if (document.getElementById("cekS1").checked == false)
+                    {
+                        var namaS1 = document.getElementById("namaS1").value;
+                        var tahunS1 = document.getElementById("tahunS1").value;
+                    }
+                    else
+                    {
+                        var namaS1 = " - ";
+                        var tahunS1 = " - ";
+                    }
+
+                    if (document.getElementById("cekkerja1").checked == false)
+                    {
+                        var namakantor1 = document.getElementById("namakantor1").value;
+                        var durasi1 = document.getElementById("durasi1").value;
+                        var posisi1 = document.getElementById("posisi1").value;
+                    }
+                    else
+                    {
+                        var namakantor1 = " - ";
+                        var durasi1 = " - ";
+                        var posisi1 = " - ";
+                    }
+
+                    if (document.getElementById("cekkerja2").checked == false)
+                    {
+                        var namakantor2 = document.getElementById("namakantor2").value;
+                        var durasi2 = document.getElementById("durasi2").value;
+                        var posisi2 = document.getElementById("posisi2").value;
+                    }
+                    else
+                    {
+                        var namakantor2 = " - ";
+                        var durasi2 = " - ";
+                        var posisi2 = " - ";
+                    }
+
+                    if (document.getElementById("cekkerja3").checked == false)
+                    {
+                        var namakantor3 = document.getElementById("namakantor3").value;
+                        var durasi3 = document.getElementById("durasi3").value;
+                        var posisi3 = document.getElementById("posisi3").value;
+                    }
+                    else
+                    {
+                        var namakantor3 = " - ";
+                        var durasi3 = " - ";
+                        var posisi3 = " - ";
+                    }
+
+                    document.getElementById("biodata").innerHTML =
+                    (`
+                        <table style = "font-family: Arial, Helvetica, sans-serif;
+                               border: 2px solid black;">
+                            <tr>
+                                <th colspan = "6"><img src = "https://cdn.zmescience.com/wp-content/uploads/2016/12/giraffe-912182_960_720.jpg" alt = "profpic" height = "200" width = "300"></th>
+                            </tr>
+                            <tr>
+                                <th colspan = "6" style = "background-color:yellow;"><b>Personal Data</b></th>
+                            </tr>
+                            <tr>
+                                <td>Nama</td>
+                                <td>: ${nama}</td>
+                            </tr>
+                            <tr>
+                                <td>Tempat / Tanggal Lahir</td>
+                                <td>: ${tempat} / ${tanggal}</td>
+                            </tr>
+                            <tr>
+                                <td>Gender</td>
+                                <td>: ${gender}</td>
+                            </tr>
+                            <tr>
+                                <td>Telepon</td>
+                                <td>: ${telepon}</td>
+                            </tr>
+                            <tr>
+                                <td>E-mail</td>
+                                <td>: ${email}</td>
+                            </tr>
+                            <tr>
+                                <th colspan = "6" style = "background-color:yellow;"><b>Riwayat Pendidikan</b></th>
+                            </tr>
+                            <tr>
+                                <td>SD</td>
+                                <td>: ${namaSD}</td>
+                                <td>Tahun lulus</td>
+                                <td>: ${tahunSD}</td>
+                            </tr>
+                            <tr>
+                                <td>SMP</td>
+                                <td>: ${namaSMP}</td>
+                                <td>Tahun lulus</td>
+                                <td>: ${tahunSMP}</td>
+                            </tr>
+                            <tr>
+                                <td>SMA</td>
+                                <td>: ${namaSMA}</td>
+                                <td>Tahun lulus</td>
+                                <td>: ${tahunSMA}</td>
+                            </tr>
+                            <tr>
+                                <td>S1</td>
+                                <td>: ${namaS1}</td>
+                                <td>Tahun lulus</td>
+                                <td>: ${tahunS1}</td>
+                            </tr>
+                            <tr>
+                                <th colspan = "6" style = "background-color:yellow;"><b>Riwayat Pekerjaan</b></th>
+                            </tr>
+                            <tr>
+                                <td>Nama Perusahaan</td>
+                                <td>: ${namakantor1}</td>
+                                <td>Lama Bekerja</td>
+                                <td>: ${durasi1}</td>
+                                <td>Posisi</td>
+                                <td>: ${posisi1}</td>
+                            </tr>
+                            <tr>
+                                <td>Nama Perusahaan</td>
+                                <td>: ${namakantor2}</td>
+                                <td>Lama Bekerja</td>
+                                <td>: ${durasi2}</td>
+                                <td>Posisi</td>
+                                <td>: ${posisi2}</td>
+                            </tr>
+                            <tr>
+                                <td>Nama Perusahaan</td>
+                                <td>: ${namakantor3}</td>
+                                <td>Lama Bekerja</td>
+                                <td>: ${durasi3}</td>
+                                <td>Posisi</td>
+                                <td>: ${posisi3}</td>
+                            </tr>
+                        </table>
+                    
+                    `)
+                    
+            }
+        </script>
+    </body>
+</html>
